@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b205a648-68b6-43c0-96a3-4ffada50a28c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="defaultValue" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("1")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl1" class="java.util.Date"/>
+	<parameter name="tgl2" class="java.util.Date"/>
+	<parameter name="imagesDir" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT * 
+FROM
+     suratkeluar
+WHERE
+     suratkeluar.`tgl_surat` BETWEEN $P{tgl1} AND $P{tgl2}]]>
+	</queryString>
+	<field name="noagenda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_surat" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nosurat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pengirim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kpd" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="isi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lampiran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ket" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="noUrut" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{noUrut}]]></variableExpression>
+	</variable>
+	<variable name="nosurat_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{nosurat}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="134" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="be2b15d0-4633-4457-a56a-2317cbd145ff" x="256" y="82" width="424" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No.Telp: 082112060701 E-mail: sdit.bahrulfikri@yahoo.com]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle" isLazy="true" onErrorType="Blank">
+				<reportElement uuid="0f76219e-ce59-4e0d-a8c8-4b8044e10c16" x="96" y="0" width="119" height="115"/>
+				<imageExpression><![CDATA["src\\laporan\\logo-sdit.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="0db46a9c-b482-487b-a5bc-97b9720b0975" x="224" y="0" width="480" height="62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDIT BAHRUL FIKRI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c22c400-fa3f-44f2-86b3-a8ae6b64a105" x="256" y="62" width="425" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jl. Kecak 3 No. 253 RT. 007/012, Kel.Mekarjaya Kec.Sukmajaya Kota Depok 16411]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="217cb18f-6717-47ce-8f47-3f40ce5cb137" x="99" y="115" width="606" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="217cb18f-6717-47ce-8f47-3f40ce5cb137" x="100" y="122" width="606" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6a8fa92f-7bf7-47cb-ae99-a69956cd9a70" x="195" y="1" width="445" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN SURAT KELUAR]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="2" y="41" width="28" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="30" y="41" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="130" y="41" width="69" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="199" y="41" width="95" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="1d63f30b-bb74-4171-bf7b-ddc779d1603b" x="30" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="45bc6fa6-3683-4e33-9b7b-9e212e50d15e" x="1" y="41" width="28" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="704cf0f4-b9bf-401e-ae90-d1051c549204" x="294" y="41" width="119" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="382e614d-a5af-47b8-9dcd-77ca9468318f" x="294" y="41" width="119" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pengirim]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="abf214af-7949-4dfe-89eb-c6d98a062040" x="537" y="41" width="123" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="25f57f08-5b2a-45e1-b6e2-ba82ad461b13" x="537" y="41" width="123" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Isi / Perihal]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="f4bf8ce2-d4bc-4419-8ae2-e76c1941b097" x="660" y="41" width="33" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="11aac1e0-7c17-4f66-8a7d-6f69ce133125" x="660" y="41" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lamp.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="96bd5fa3-ae2d-4307-9502-36394f56e7a3" x="693" y="41" width="109" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="084d951f-3ad6-4681-bd38-df1a42a0d7b5" x="693" y="41" width="109" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="eb909f07-4367-4b6d-b2d9-b6c88a9a0159" x="413" y="41" width="124" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="9c28277f-a7fa-4e3f-afd6-395db4d7b167" x="413" y="41" width="124" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tujuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="762d2944-0ae1-4b40-9c58-cbdf6e899c88" x="130" y="41" width="69" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Agenda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="80bcc356-0abd-49c1-b6fc-42b64c7ee6cb" x="199" y="41" width="95" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Surat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="2" y="0" width="28" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="30" y="0" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="130" y="0" width="69" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="925bf715-c3b5-421b-aa6c-e70578cd3e49" x="199" y="0" width="95" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="8a30a4e7-501b-4f2a-ada3-e5784ad6a2d2" x="1" y="0" width="28" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Integer ($V{noUrut}.intValue()+$P{defaultValue}.intValue())]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="8fed7163-0509-40c6-9f54-36d3d8bb40e6" x="294" y="0" width="119" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="387ca2e5-5982-4c0a-bd95-35e71da36148" x="537" y="0" width="123" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="e9d61fbc-56f2-4425-87bb-3008b6db8f6a" x="660" y="0" width="33" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="c3660d46-d679-4e54-8eac-1c2e7381ebb4" x="693" y="0" width="109" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="cdc20356-2231-40cf-b923-82434bcd6a3d" x="413" y="0" width="124" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="81ac58df-9c5c-42e1-b0bd-8af31cfadfe4" x="30" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tgl_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e7a0744b-1cd1-4c33-adb0-3797504d0657" x="130" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{noagenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="510aab59-17b6-44c5-9af3-8e9f72616bb7" x="199" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nosurat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f26f333-a287-4d7b-9ade-3ec37602a88c" x="294" y="0" width="119" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pengirim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6ed4e087-9895-49c2-a504-0bd6ed75bcaf" x="413" y="0" width="124" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kpd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0cd52615-a84c-4309-9f79-7124d4c30d62" x="537" y="0" width="123" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{isi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6eae752b-9193-4366-a5f4-65f28328ec2b" x="660" y="0" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lampiran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9ca851ca-83f1-4084-a95e-cb201631e7e3" x="693" y="0" width="109" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ket}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="177" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="bc7271bf-76ed-41b8-8cc1-9017f1ce4a38" x="537" y="16" width="124" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Surat Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="812dd6f5-e363-4967-84d2-51e14bad8479" x="661" y="16" width="19" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e11fd03e-5715-4749-b00c-e02812994753" x="680" y="16" width="25" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{nosurat_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d0bbdf36-22be-45c6-af64-4bcda3923cce" x="544" y="142" width="160" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fauzi Aprilla Iman Abadi, S.Pd.]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="021e6c80-e1f5-49e9-8935-a5479f7f3bc9" x="604" y="49" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d0bbdf36-22be-45c6-af64-4bcda3923cce" x="570" y="89" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kepala Sekolah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5289e097-9546-4b7a-a338-db50319bf246" x="565" y="49" width="39" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Depok,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d0bbdf36-22be-45c6-af64-4bcda3923cce" x="570" y="69" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Mengetahui,]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
